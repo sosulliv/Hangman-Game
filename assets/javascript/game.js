@@ -59,7 +59,7 @@ var loss_counter = 0;
 var win_counter = 0;
 var incorrect_guesses =10;
 var previous_word;
-var reset_flag;
+var new_game_flag;
 
 
 
@@ -76,7 +76,7 @@ function next_word()
 	//reset_table();
 	var random_index=Math.floor(Math.random() * states.length);
      
-     wrong_guess_counter=0;
+     
      current_word = states[random_index];
      //states_div.innerHTML=current_word;
      var current_word_length = current_word.length;
@@ -119,6 +119,7 @@ if (current_word.indexOf(letter) > -1)
                                 console.log(win_counter);
                                 document.getElementById('wins').innerHTML = win_counter;
                                 previous_word=current_word
+                                new_game_flag='y';
 
 
 							    }
@@ -137,8 +138,8 @@ if (current_word.indexOf(letter) > -1)
                  loss_counter++;
                  document.getElementById('losses').innerHTML = loss_counter;
                   draw_hangman();
-                  wrong_guess_counter=0;
                  
+                  new_game_flag='y';
                 console.log("GameOver");
 
 			}
@@ -153,10 +154,14 @@ if (current_word.indexOf(letter) > -1)
         // Captures the key press, converts it to lowercase, and saves it to a variable.
         var letter = String.fromCharCode(event.keyCode).toLowerCase();
 
-
+         
+        if (new_game_flag==='y') {
+        	alert("Please press play to play again.");
+        } else {
+   
         hangman_main(letter);
          
-       
+       }
 
 
 	}
@@ -283,13 +288,15 @@ function draw_hangman () {
 
 function reset_hangman()
 
-
-
 {
 var c = document.getElementById("hangman_canvas");
 var ctx = c.getContext("2d");
 
 ctx.clearRect(0, 0, 600, 500);
+wrong_guess_counter=0;
 
+document.getElementById('wrong_guess_count').innerHTML = wrong_guess_counter;
 
+document.getElementById('guess_remaining').innerHTML = (incorrect_guesses-wrong_guess_counter);
+new_game_flag='n';
 }

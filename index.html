@@ -17,7 +17,7 @@
 
 	<div class="container">
        
-     <div class="jumbotron">
+     <div class="col-md-12 jumbotron1">
 		  <h1 class="display-6">50 States Hangman</h1>
 		  <p class="lead">Click The Play Button to Begin</p>
 		  <a class="btn btn-primary btn-lg" onclick= "next_word()" role="button">Play!</a>
@@ -25,47 +25,51 @@
 	</div>
 
        
+     <div class="row">
 
-      
-    <div class="row">
-     <div class="col-md-4">
-     </div>
-     <div class="col-md-4">
-		    <div class="panel panel-default">
-				<div class="panel-heading">
-					<h3 class="panel-title">Hangman Word</h3>
-				</div>
-				<div class="panel-body">
+
+     	
+     	<div class="col-md-4" id="canvas_size">
+          
+
+		   <canvas id="hangman_canvas" width="600" height="500">
+		   	
+		   </canvas>
+
+     
+     	</div>
+
+       <div class="col-md-4" id="words">
+       	            <div class='row'>
+
+     				<h3 >Hangman Word</h3>
+     				</div>
+			        
+			        <div class='row'>
 					<h2 id="wordguess">_ _ _ _ _ _ _</h2>
-				</div>
-			</div>
-	
-			<div class="panel panel-default">
-				<div class="panel-body">
+			        </div>
+			        
+			        <div class='row'>
 					Wins: <span id="wins">0</span>
-				</div>
-			</div>
-	
-			<div class="panel panel-default">
-				<div class="panel-body">
-					Losses:  <span id="losses">0</span>
-				</div>
-			</div>
-			<div class="panel panel-default">
-				<div class="panel-body">
-					Wrong Guess:  <span id="wrong_guess_count">0</span>
-				</div>
-			</div>
-			<div class="panel panel-default">
-				<div class="panel-body">
-					Guesses Remaining:  <span id="guess_remaining">0</span>
-				</div>
-			</div>
-	</div>
+				    </div>
 
-	<div class="col-md-4">
-     </div>
-   </div>
+	                <div class='row'>
+					Losses:  <span id="losses">0</span>
+					</div>
+			        
+			        <div class='row'>
+					Wrong Guess:  <span id="wrong_guess_count">0</span>
+					</div>
+			        
+			        <div class='row'>
+					Guesses Remaining:  <span id="guess_remaining">0</span>
+					</div>
+
+
+	 </div>	
+     </div>	
+      
+ 
 
  	</div>
 

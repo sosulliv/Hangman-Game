@@ -1,3 +1,26 @@
-.jumbotron {
+.jumbotron1 {
 background-image: url("../images/usmap.jpg");
-background-size: cover;}
+background-size: cover;
+padding:1%;}
+
+#hangman_canvas {
+
+            	        padding-right: 10%;
+
+
+			}
+
+
+#canvas_size {
+
+	  
+	       
+	        padding-right: 60%;
+	        
+	
+			}
+
+#words {
+
+	    padding-top: 15%;
+}

@@ -58,6 +58,7 @@ var blanks =[];
 var loss_counter = 0;
 var win_counter = 0;
 var incorrect_guesses =10;
+var previous_word;
 
 
 
@@ -109,11 +110,13 @@ if (current_word.indexOf(letter) > -1)
                             console.log(document.getElementById('wordguess').innerHTML.replace(/ /g,''));
 
                             console.log(current_word);
-                            if (document.getElementById('wordguess').innerHTML.replace(/ /g,'') == current_word.replace(/ /g,''))
+                            if (document.getElementById('wordguess').innerHTML.replace(/ /g,'') == current_word.replace(/ /g,'') && previous_word != current_word)
                             	{console.log("win")
                                 win_counter=win_counter+1;
                                 console.log(win_counter);
                                 document.getElementById('wins').innerHTML = win_counter;
+                                previous_word=current_word
+
 							    }
 								}	
 					}
@@ -123,7 +126,7 @@ if (current_word.indexOf(letter) > -1)
 			console.log("false");
 			wrong_guess_counter++;
 			console.log(wrong_guess_counter);
-		
+
 			if  (wrong_guess_counter===incorrect_guesses ) {
                  loss_counter++;
                  document.getElementById('losses').innerHTML = loss_counter;

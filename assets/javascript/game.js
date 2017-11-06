@@ -117,6 +117,7 @@ if (current_word.indexOf(letter) > -1)
                                 document.getElementById('wins').innerHTML = win_counter;
                                 previous_word=current_word
 
+
 							    }
 								}	
 					}
@@ -126,6 +127,8 @@ if (current_word.indexOf(letter) > -1)
 			console.log("false");
 			wrong_guess_counter++;
 			console.log(wrong_guess_counter);
+		    document.getElementById('wrong_guess_count').innerHTML = wrong_guess_counter;
+            document.getElementById('guess_remaining').innerHTML = (incorrect_guesses-wrong_guess_counter);
 
 			if  (wrong_guess_counter===incorrect_guesses ) {
                  loss_counter++;

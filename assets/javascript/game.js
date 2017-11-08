@@ -210,7 +210,7 @@ function draw_hangman () {
 				context.strokeStyle = '#000000';
 				context.beginPath();
 				context.moveTo(267, 71);
-				context.lineTo(266, 105);
+				context.lineTo(266, 95);
 				context.stroke();
 				context.closePath();
 
@@ -289,14 +289,14 @@ function draw_hangman () {
 function reset_hangman()
 
 {
-var c = document.getElementById("hangman_canvas");
-var ctx = c.getContext("2d");
+		var c = document.getElementById("hangman_canvas");
+		var ctx = c.getContext("2d");
 
-ctx.clearRect(0, 0, 600, 500);
-wrong_guess_counter=0;
+		ctx.clearRect(0, 0, 600, 500);
+		wrong_guess_counter=0;
 
-document.getElementById('wrong_guess_count').innerHTML = wrong_guess_counter;
+		document.getElementById('wrong_guess_count').innerHTML = wrong_guess_counter;
 
-document.getElementById('guess_remaining').innerHTML = (incorrect_guesses-wrong_guess_counter);
-new_game_flag='n';
+		document.getElementById('guess_remaining').innerHTML = (incorrect_guesses-wrong_guess_counter);
+		new_game_flag='n';
 }
